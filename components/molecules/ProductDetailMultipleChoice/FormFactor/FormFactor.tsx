@@ -4,6 +4,7 @@ import { ITabProps } from "../../../atoms/RadioGroup/RadioGroup";
 
 const FormFactor: React.FC = () => {
   const [currentValue, setCurrentValue] = useState("head");
+
   const tabList: ITabProps[] = [
     {
       value: "head",
@@ -18,7 +19,17 @@ const FormFactor: React.FC = () => {
     },
   ];
 
-  return <TabList value={currentValue} onChange={(val) => setCurrentValue(val as string)} options={tabList} />;
+  return (
+    <div className="my-12">
+      <h1 className="text-gray-900 font-medium text-lg mb-2">Form Factor</h1>
+      <TabList
+        value={currentValue}
+        onChange={(val) => setCurrentValue(val as string)}
+        options={tabList}
+        className="grid grid-cols-2 gap-4"
+      />
+    </div>
+  );
 };
 
 export default FormFactor;

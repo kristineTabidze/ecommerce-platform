@@ -4,23 +4,30 @@ import { ITabProps } from "../../../atoms/RadioGroup/RadioGroup";
 
 const PowerChoice: React.FC = () => {
   const [currentValue, setCurrentValue] = useState(0);
+
   const tabList: ITabProps[] = [
     {
       value: 0,
       title: "None",
+      description: "Use in the studio or with your own power amp.",
     },
     {
       value: 449,
-      title: "Profiler Remote Foot Controller",
+      title: "Powered",
+      description: "Built-in 600W solid state power amp",
     },
   ];
 
   return (
-    <TabList
-      value={currentValue}
-      onChange={(val) => setCurrentValue(val as number)}
-      options={tabList}
-    />
+    <div className="my-12">
+      <h1 className="text-gray-900 font-medium text-lg mb-2">Power Amp</h1>
+      <TabList
+        value={currentValue}
+        onChange={(val) => setCurrentValue(val as number)}
+        options={tabList}
+        className="grid gap-4"
+      />
+    </div>
   );
 };
 

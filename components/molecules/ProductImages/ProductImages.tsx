@@ -8,12 +8,12 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
   return (
     <Tab.Group as="div" className="flex flex-col-reverse">
       <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-        <Tab.List className="grid grid-cols-4 gap-6">
+        <Tab.List className="grid grid-cols-3 gap-6">
           {images.map((image) => (
             <Tab
               key={image.id}
               onClick={() => setCurrentImage(image)}
-              className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
+              className="ring ring-gray-200 ring-offset-1 hover:ring-gray-400 relative flex shadow-sm h-[100px] w-[186px] cursor-pointer items-center justify-center rounded-lg bg-white focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
             >
               <>
                 <span className="sr-only"> {image.name} </span>
@@ -27,7 +27,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
                 <span
                   className={classNames(
                     currentImage.id === image.id
-                      ? "ring-indigo-500"
+                      ? "ring-gray-500"
                       : "ring-transparent",
                     "pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2"
                   )}
@@ -45,7 +45,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
             <img
               src={image.src}
               alt={image.alt}
-              className="h-full w-full object-cover object-center sm:rounded-lg"
+              className="h-[342px] w-[592px] object-cover object-center sm:rounded-lg shadow-sm bg-white border-solid border border-[#E5E7EB]"
             />
           </Tab.Panel>
         ))}

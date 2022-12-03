@@ -1,5 +1,5 @@
 import React from "react";
-import _ from 'lodash';
+import _ from "lodash";
 import List from "../../atoms/List";
 import Header from "../../molecules/Header";
 import FootControler from "../../molecules/ProductDetailMultipleChoice/FormFactor/FootControer";
@@ -8,6 +8,7 @@ import PowerChoice from "../../molecules/ProductDetailMultipleChoice/FormFactor/
 import ProductImages from "../../molecules/ProductImages";
 import ProductInfo from "../../molecules/ProductInfo";
 import { IProduct } from "./types";
+import Footer from "../../molecules/Footer";
 
 const ProductPage: React.FC<{
   productInformation: IProduct;
@@ -23,10 +24,10 @@ const ProductPage: React.FC<{
   );
 
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+    <>
+      <div className=" bg-white mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <Header />
-        <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+        <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 mt-12">
           <ProductImages images={productInformation?.images || []} />
           <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
             <ProductInfo
@@ -44,7 +45,8 @@ const ProductPage: React.FC<{
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
