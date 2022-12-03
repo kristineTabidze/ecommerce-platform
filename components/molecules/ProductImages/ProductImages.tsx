@@ -1,9 +1,9 @@
 import { Tab } from "@headlessui/react";
+import classNames from "classnames";
 import { useState } from "react";
-import ImageFrame from "../../atoms/ImageFrame";
-import { IImageFrame } from "../../atoms/ImageFrame/types";
+import { IProductImages } from "./types";
 
-const ProductImages: React.FC<{ images: IImageFrame[] }> = ({ images }) => {
+const ProductImages: React.FC<IProductImages> = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   return (
     <Tab.Group as="div" className="flex flex-col-reverse">
@@ -15,7 +15,25 @@ const ProductImages: React.FC<{ images: IImageFrame[] }> = ({ images }) => {
               onClick={() => setCurrentImage(image)}
               className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
             >
-              <ImageFrame {...image} selected={currentImage.id === image.id} />
+              <>
+                <span className="sr-only"> {image.name} </span>
+                <span className="absolute inset-0 overflow-hidden rounded-md">
+                  <img
+                    src={image.src}
+                    alt=""
+                    className="h-full w-full object-cover object-center"
+                  />
+                </span>
+                <span
+                  className={classNames(
+                    currentImage.id === image.id
+                      ? "ring-indigo-500"
+                      : "ring-transparent",
+                    "pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2"
+                  )}
+                  aria-hidden="true"
+                />
+              </>
             </Tab>
           ))}
         </Tab.List>
