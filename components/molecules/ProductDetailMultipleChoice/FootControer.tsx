@@ -13,6 +13,7 @@ const FootControler: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
     {
       value: 449,
       title: "Profiler Remote Foot Controller",
+      price: 449,
     },
   ];
 

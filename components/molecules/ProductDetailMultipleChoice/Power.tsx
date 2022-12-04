@@ -4,7 +4,6 @@ import { ITabProps } from "../../atoms/RadioGroup/RadioGroup";
 import Typography from "../../primitives/Typography";
 import { IMultipleChoiceProps } from "./types";
 
-
 const PowerChoice: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
   const tabList: ITabProps[] = [
     {
@@ -16,6 +15,7 @@ const PowerChoice: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
       value: 449,
       title: "Powered",
       description: "Built-in 600W solid state power amp",
+      price: 449,
     },
   ];
 
