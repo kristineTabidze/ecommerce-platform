@@ -6,14 +6,14 @@ import { IProductImages } from "./types";
 const ProductImages: React.FC<IProductImages> = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   return (
-    <Tab.Group as="div" className="flex flex-col-reverse sticky top-7">
-      <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-        <Tab.List className="grid grid-cols-3 w-max gap-6 ">
+    <Tab.Group as="div" className="flex flex-col-reverse lg:sticky top-7">
+      <div className="mx-auto mt-6 w-full">
+        <Tab.List className="flex justify-between lg:w-max lg:gap-6 ">
           {images.map((image) => (
             <Tab
               key={image.id}
               onClick={() => setCurrentImage(image)}
-              className="ring ring-gray-200 ring-offset-1 hover:ring-gray-400 relative flex shadow-sm h-[100px] w-[186px] cursor-pointer items-center justify-center rounded-lg bg-white focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
+              className="ring ring-gray-200 ring-offset-1 hover:ring-gray-400 relative flex shadow-sm w-[86px] h-[46px] sm:w-[170px] sm:h-[92px] lg:h-[78px] lg:w-[144px] xl:h-[100px] xl:w-[186px] cursor-pointer items-center justify-center rounded-lg bg-white focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-offset-4"
             >
               <>
                 <span className="sr-only"> {image.name} </span>
@@ -27,7 +27,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
                 <span
                   className={classNames(
                     currentImage.id === image.id
-                      ? "ring-gray-500"
+                      ? "ring ring-gray-700"
                       : "ring-transparent",
                     "pointer-events-none absolute inset-0 rounded-md ring-2 ring-offset-2"
                   )}
@@ -45,7 +45,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
             <img
               src={image.src}
               alt={image.alt}
-              className="h-[342px] w-[592px] object-contain object-center sm:rounded-lg shadow-sm bg-white border-solid border border-[#E5E7EB]"
+              className="w-full h-[206px] sm:h-[360px] lg:h-[342px] lg:w-[592px] object-contain object-center sm:rounded-lg shadow-sm bg-white border-solid border border-[#E5E7EB]"
             />
           </Tab.Panel>
         ))}

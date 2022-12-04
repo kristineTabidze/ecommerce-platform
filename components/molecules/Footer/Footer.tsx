@@ -7,8 +7,8 @@ import { ReactComponent as ShieldIcon } from "../../../assets/svg/sm-shield-chec
 
 const Footer: React.FC<{ price: string }> = ({ price }) => {
   return (
-    <footer className="fixed bottom-0 flex items-center justify-between py-6 px-24 w-full bg-gray-50">
-      <div className="flex gap-8">
+    <footer className="fixed bottom-0 flex items-center justify-between py-6 px-4 sm:px-12 md:px-28 lg:px-8 xl:px-24 w-full bg-gray-50">
+      <div className="hidden sm:flex lg:gap-8 lg:flex-row sm:gap-5 flex-col ">
         <FooterInfo
           icon={<GlobeIcon />}
           title="Free Shipping"
@@ -23,7 +23,7 @@ const Footer: React.FC<{ price: string }> = ({ price }) => {
       <div className="flex gap-6">
         <div className="flex flex-col justify-center items-end">
           <p className="text-gray-900 text-3xl font-bold">{price}</p>
-          <Typography.H2>
+          <Typography.H2 className="hidden sm:block">
             Need financing? <a href="#">Learn more</a>
           </Typography.H2>
         </div>

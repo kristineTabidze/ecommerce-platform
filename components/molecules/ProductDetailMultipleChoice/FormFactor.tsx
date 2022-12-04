@@ -26,7 +26,7 @@ const FormFactor: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
         value={value}
         onChange={onChange}
         options={tabList}
-        className="grid grid-cols-2 gap-4"
+        className="grid lg:grid-cols-2 gap-4"
       />
     </div>
   );

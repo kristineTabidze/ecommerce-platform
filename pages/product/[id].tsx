@@ -45,6 +45,8 @@ const productDescription = {
 };
 
 const Product: React.FC = () => {
+  // in real life, this would be a call to an API to get the product information
+  // it would happen with getstatisprops
   return (
     <div>
       <ProductPage

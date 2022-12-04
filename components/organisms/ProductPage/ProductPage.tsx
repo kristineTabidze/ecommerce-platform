@@ -51,7 +51,7 @@ const ProductPage: React.FC<IProductPageProps> = ({
 
   return (
     <>
-      <div className="bg-white pt-[72px] pb-[189px] px-28">
+      <div className="bg-white pb-[189px] px-4 pt-12 sm:pt-[72px] md:px-28 sm:px-12 lg:px-8 xl:px-28">
         <Header />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 mt-12 relative">
           <ProductImages images={productInformation?.images || []} />

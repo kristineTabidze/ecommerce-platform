@@ -7,11 +7,13 @@ const FooterInfo: React.FC<{
   description: string;
 }> = ({ icon, title, description }) => {
   return (
-    <div className="flex align-start justify-start gap-3 w-[288px]">
+    <div className="flex align-start justify-start gap-3 lg:w-[288px]">
       <div>{icon}</div>
       <div>
         <Typography.H1>{title} </Typography.H1>
-        <Typography.H2>{description} </Typography.H2>
+        <Typography.H2 className="hidden lg:block">
+          {description}
+        </Typography.H2>
       </div>
     </div>
   );
