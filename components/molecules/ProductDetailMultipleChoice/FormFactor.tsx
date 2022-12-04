@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import TabList from "../../../atoms/RadioGroup";
-import { ITabProps } from "../../../atoms/RadioGroup/RadioGroup";
+import React from "react";
+import TabList from "../../atoms/RadioGroup";
+import { ITabProps } from "../../atoms/RadioGroup/RadioGroup";
+import Typography from "../../primitives/Typography";
+import { IMultipleChoiceProps } from "./types";
 
-const FormFactor: React.FC = () => {
-  const [currentValue, setCurrentValue] = useState("head");
-
+const FormFactor: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
   const tabList: ITabProps[] = [
     {
       value: "head",
@@ -21,10 +21,10 @@ const FormFactor: React.FC = () => {
 
   return (
     <div className="my-12">
-      <h1 className="text-gray-900 font-medium text-lg mb-2">Form Factor</h1>
+      <Typography.H1 className="text-lg mb-2">Form Factor</Typography.H1>
       <TabList
-        value={currentValue}
-        onChange={(val) => setCurrentValue(val as string)}
+        value={value}
+        onChange={onChange}
         options={tabList}
         className="grid grid-cols-2 gap-4"
       />

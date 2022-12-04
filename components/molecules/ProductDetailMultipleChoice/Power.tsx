@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import TabList from "../../../atoms/RadioGroup";
-import { ITabProps } from "../../../atoms/RadioGroup/RadioGroup";
+import React from "react";
+import TabList from "../../atoms/RadioGroup";
+import { ITabProps } from "../../atoms/RadioGroup/RadioGroup";
+import Typography from "../../primitives/Typography";
+import { IMultipleChoiceProps } from "./types";
 
-const PowerChoice: React.FC = () => {
-  const [currentValue, setCurrentValue] = useState(0);
 
+const PowerChoice: React.FC<IMultipleChoiceProps> = ({ value, onChange }) => {
   const tabList: ITabProps[] = [
     {
       value: 0,
@@ -20,10 +21,10 @@ const PowerChoice: React.FC = () => {
 
   return (
     <div className="my-12">
-      <h1 className="text-gray-900 font-medium text-lg mb-2">Power Amp</h1>
+      <Typography.H1 className="text-lg mb-2">Power Amp</Typography.H1>
       <TabList
-        value={currentValue}
-        onChange={(val) => setCurrentValue(val as number)}
+        value={value}
+        onChange={onChange}
         options={tabList}
         className="grid gap-4"
       />

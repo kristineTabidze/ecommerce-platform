@@ -1,4 +1,5 @@
 import React from "react";
+import Typography from "../../primitives/Typography";
 
 const FooterInfo: React.FC<{
   icon: React.ReactNode;
@@ -9,8 +10,8 @@ const FooterInfo: React.FC<{
     <div className="flex align-start justify-start gap-3 w-[288px]">
       <div>{icon}</div>
       <div>
-        <p className="text-gray-900 font-medium text-sm">{title}</p>
-        <p className="text-gray-500 font-normal text-sm">{description}</p>
+        <Typography.H1>{title} </Typography.H1>
+        <Typography.H2>{description} </Typography.H2>
       </div>
     </div>
   );

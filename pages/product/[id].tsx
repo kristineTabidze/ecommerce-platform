@@ -15,15 +15,21 @@ const sampleProduct: IProduct = {
   images: [
     {
       id: 1,
-      name: "Angled view",
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-03-product-01.jpg",
-      alt: "Angled front view with bag zipped and handles upright.",
+      name: "amp front view",
+      src: "https://www.kemper-amps.com/images/pagecontent/products_profiler-head-black_cropped_wh.jpg?v5",
+      alt: "amp front view",
     },
     {
       id: 2,
-      name: "Angled view",
-      src: "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      alt: "Angled front view with bag zipped and handles upright.",
+      name: "amp side view",
+      src: "https://cdn.shopify.com/s/files/1/0244/0329/products/kemper-amplifier-black-kemper-profiler-head-27993372557373_78d2acba-6da5-43c5-a61e-5f3f83dbab06.jpg?v=1661124717",
+      alt: "amp side view",
+    },
+    {
+      id: 3,
+      name: "amp back view",
+      src: "https://cdn3.volusion.com/lqpzc.dkrfy/v/vspfiles/photos/19521-5.jpg?v-cache=1645439189",
+      alt: "amp back view",
     },
   ],
 };
@@ -32,7 +38,10 @@ const productDescription = {
   description:
     "Hailed as a game-changer by guitarists the world over, the PROFILER™ is the first digital guitar amp to really nail the full and dynamic sound of a guitar or bass amp. \n This is made possible by a radical, patented technology and concept which we call 'PROFILING'.",
   name: "The KEMPER PROFILER™ is the leading-edge digital guitar amplifier and all-in-one effects processor.",
-  price: "$1,799",
+  price: {
+    value: 1799,
+    currency: "USD",
+  },
 };
 
 const Product: React.FC = () => {

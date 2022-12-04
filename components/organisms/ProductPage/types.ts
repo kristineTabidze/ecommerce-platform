@@ -12,3 +12,15 @@ export interface IProduct {
   weight: number;
   images?: IImmage[];
 }
+
+export interface IProductPageProps {
+  productInformation: IProduct;
+  productDescription: {
+    description: string;
+    name: string;
+    price: {
+      currency: string;
+      value: number;
+    };
+  };
+}

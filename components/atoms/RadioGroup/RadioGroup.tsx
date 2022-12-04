@@ -13,7 +13,7 @@ export interface ITabProps {
 const RadioGroup: React.FC<{
   options: ITabProps[];
   value: value;
-  onChange: React.Dispatch<React.SetStateAction<value>>;
+  onChange: (val: value) => void;
   className?: string;
 }> = ({ options, value, onChange, className = "" }) => {
   return (

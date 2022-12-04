@@ -1,4 +1,5 @@
 import React from "react";
+import { formatKey } from "./utils";
 
 const List: React.FC<{
   listOptions: Record<string, string | number>;
@@ -14,7 +15,7 @@ const List: React.FC<{
           className="py-5 border-b text-sm  border-gray-200 flex items-center justify-between"
           key={key}
         >
-          <dt>{key}</dt>
+          <dt>{formatKey(key)}</dt>
           <dd>{listOptions[key]}</dd>
         </dl>
       ))}

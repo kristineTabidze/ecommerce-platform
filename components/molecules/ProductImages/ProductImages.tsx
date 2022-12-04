@@ -6,9 +6,9 @@ import { IProductImages } from "./types";
 const ProductImages: React.FC<IProductImages> = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   return (
-    <Tab.Group as="div" className="flex flex-col-reverse">
+    <Tab.Group as="div" className="flex flex-col-reverse sticky top-7">
       <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
-        <Tab.List className="grid grid-cols-3 gap-6">
+        <Tab.List className="grid grid-cols-3 w-max gap-6 ">
           {images.map((image) => (
             <Tab
               key={image.id}
@@ -21,7 +21,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
                   <img
                     src={image.src}
                     alt=""
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-contain object-center"
                   />
                 </span>
                 <span
@@ -45,7 +45,7 @@ const ProductImages: React.FC<IProductImages> = ({ images }) => {
             <img
               src={image.src}
               alt={image.alt}
-              className="h-[342px] w-[592px] object-cover object-center sm:rounded-lg shadow-sm bg-white border-solid border border-[#E5E7EB]"
+              className="h-[342px] w-[592px] object-contain object-center sm:rounded-lg shadow-sm bg-white border-solid border border-[#E5E7EB]"
             />
           </Tab.Panel>
         ))}
